@@ -15,7 +15,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	private static int REQ_1 = 1;
@@ -45,6 +44,10 @@ public class MainActivity extends Activity {
 		startActivityForResult(intent, REQ_2);
 	}
 
+	public void customCamera(View v){
+		Intent intent=new Intent(MainActivity.this, CustomCamera.class);
+		startActivity(intent);
+	}
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -63,7 +66,7 @@ public class MainActivity extends Activity {
 					fis = new FileInputStream(mfilePath);
 					Bitmap bitmap = BitmapFactory.decodeStream(fis);
 					image.setImageBitmap(bitmap);
-					Toast.makeText(MainActivity.this, mfilePath, Toast.LENGTH_LONG).show();
+					
 				} catch (FileNotFoundException e) {
 					e.printStackTrace();
 				} finally {

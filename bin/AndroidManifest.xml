@@ -8,6 +8,7 @@
         android:minSdkVersion="8"
         android:targetSdkVersion="18" />
 
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -28,6 +29,10 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
+        </activity>
+        <activity android:name="com.twac.camera.CustomCamera" >
+        </activity>
+        <activity android:name="com.twac.camera.ResultAty" >
         </activity>
     </application>
 
